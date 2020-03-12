@@ -1,10 +1,16 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.1.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "PubNub",
+    platforms: [
+        .iOS(.v9),
+        .macOS(.v10_14),
+        .tvOS(.v10),
+        .watchOS(.v4)
+    ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
@@ -21,7 +27,8 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "PubNub",
-            dependencies: []
+            dependencies: [],
+            path: "./PubNub/"
         ),
     ]
 )
